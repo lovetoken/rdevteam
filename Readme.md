@@ -2,7 +2,8 @@
 
 
 ```r
-devtools::install_github('lovetoken/rdevteam')
+devtools::install_github("lovetoken/rdevteam")
+library(rdevteam)
 ```
 
 <br><br>
@@ -13,7 +14,7 @@ devtools::install_github('lovetoken/rdevteam')
 
 
 ```r
-naverRelation1('한국')
+naverRelation1("한국")
 ```
 
 ```
@@ -30,7 +31,7 @@ naverRelation1('한국')
 ```
 
 ```r
-naverRelation2('한국')
+naverRelation2("한국")
 ```
 
 ```
@@ -146,9 +147,16 @@ naverRelation2('한국')
 ## [19] "베트남 항공권"   "베트남 비행기"  
 ## 
 ## $`한국 한자`
-##  [1] "미국"          "핀란드"        "러시아"        "영국"         
-##  [5] "인도"          "프랑스"        "캐나다"        "대한민국"     
-##  [9] "호주"          "세계 GDP 순위"
+##  [1] "미국"                     "핀란드"                  
+##  [3] "러시아"                   "영국"                    
+##  [5] "인도"                     "프랑스"                  
+##  [7] "캐나다"                   "대한민국"                
+##  [9] "호주"                     "세계 GDP 순위"           
+## [11] "대만"                     "태국"                    
+## [13] "베트남"                   "한국 한자"               
+## [15] "중국 한국기자"            "필리핀"                  
+## [17] "gdp"                      "이탈리아"                
+## [19] "중국경호원 한국기자 폭행" "인도네시아"              
 ## 
 ## $`중국 한국기자`
 ##  [1] "중국 경호원 기자 폭행"    "중국 한국기자 폭행"      

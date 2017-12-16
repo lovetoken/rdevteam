@@ -13,7 +13,7 @@ output:
 ---
 
 ```{r env, echo = F, warning = F, message = F}
-pacman::p_load(knitr, tidyverse); library(rdevteam)
+pacman::p_load(knitr, tidyverse, readr, magrittr); library(rdevteam)
 opts_chunk$set(fig.path = "output/figure/", fig.align = "center", out.width = "80%", warning = F, message = F)
 ```
 
@@ -22,7 +22,8 @@ opts_chunk$set(fig.path = "output/figure/", fig.align = "center", out.width = "8
 ## Install
 
 ```{r eval = F}
-devtools::install_github('lovetoken/rdevteam')
+devtools::install_github("lovetoken/rdevteam")
+library(rdevteam)
 ```
 
 <br><br>
@@ -32,6 +33,6 @@ devtools::install_github('lovetoken/rdevteam')
 ### 네이버 연관검색어 추출 : `naverRelation1()`, `naverRelation2()`
 
 ```{r}
-naverRelation1('한국')
-naverRelation2('한국')
+naverRelation1("한국")
+naverRelation2("한국")
 ```

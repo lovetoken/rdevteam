@@ -227,14 +227,15 @@ div.tocify {
 <p><br><br></p>
 <div id="install" class="section level2">
 <h2>Install</h2>
-<pre class="r"><code>devtools::install_github('lovetoken/rdevteam')</code></pre>
+<pre class="r"><code>devtools::install_github(&quot;lovetoken/rdevteam&quot;)
+library(rdevteam)</code></pre>
 <p><br><br></p>
 </div>
 <div class="section level2">
 <h2>주요기능</h2>
 <div id="---naverrelation1-naverrelation2" class="section level3">
 <h3>네이버 연관검색어 추출 : <code>naverRelation1()</code>, <code>naverRelation2()</code></h3>
-<pre class="r"><code>naverRelation1('한국')</code></pre>
+<pre class="r"><code>naverRelation1(&quot;한국&quot;)</code></pre>
 <pre><code>##  [1] &quot;미국&quot;                     &quot;핀란드&quot;                  
 ##  [3] &quot;러시아&quot;                   &quot;영국&quot;                    
 ##  [5] &quot;인도&quot;                     &quot;프랑스&quot;                  
@@ -245,7 +246,7 @@ div.tocify {
 ## [15] &quot;중국 한국기자&quot;            &quot;필리핀&quot;                  
 ## [17] &quot;gdp&quot;                      &quot;이탈리아&quot;                
 ## [19] &quot;중국경호원 한국기자 폭행&quot; &quot;인도네시아&quot;</code></pre>
-<pre class="r"><code>naverRelation2('한국')</code></pre>
+<pre class="r"><code>naverRelation2(&quot;한국&quot;)</code></pre>
 <pre><code>## $미국
 ##  [1] &quot;일본&quot;          &quot;대한민국&quot;      &quot;한국&quot;          &quot;영국&quot;         
 ##  [5] &quot;캐나다&quot;        &quot;인도&quot;          &quot;프랑스&quot;        &quot;독일&quot;         
@@ -358,9 +359,16 @@ div.tocify {
 ## [19] &quot;베트남 항공권&quot;   &quot;베트남 비행기&quot;  
 ## 
 ## $`한국 한자`
-##  [1] &quot;미국&quot;          &quot;핀란드&quot;        &quot;러시아&quot;        &quot;영국&quot;         
-##  [5] &quot;인도&quot;          &quot;프랑스&quot;        &quot;캐나다&quot;        &quot;대한민국&quot;     
-##  [9] &quot;호주&quot;          &quot;세계 GDP 순위&quot;
+##  [1] &quot;미국&quot;                     &quot;핀란드&quot;                  
+##  [3] &quot;러시아&quot;                   &quot;영국&quot;                    
+##  [5] &quot;인도&quot;                     &quot;프랑스&quot;                  
+##  [7] &quot;캐나다&quot;                   &quot;대한민국&quot;                
+##  [9] &quot;호주&quot;                     &quot;세계 GDP 순위&quot;           
+## [11] &quot;대만&quot;                     &quot;태국&quot;                    
+## [13] &quot;베트남&quot;                   &quot;한국 한자&quot;               
+## [15] &quot;중국 한국기자&quot;            &quot;필리핀&quot;                  
+## [17] &quot;gdp&quot;                      &quot;이탈리아&quot;                
+## [19] &quot;중국경호원 한국기자 폭행&quot; &quot;인도네시아&quot;              
 ## 
 ## $`중국 한국기자`
 ##  [1] &quot;중국 경호원 기자 폭행&quot;    &quot;중국 한국기자 폭행&quot;      
