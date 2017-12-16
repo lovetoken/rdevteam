@@ -63,3 +63,4 @@ vignettes/*.pdf
 *.knit.md
 
 # End of https://www.gitignore.io/api/r,macos
+.Rproj.user
