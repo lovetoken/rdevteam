@@ -13,7 +13,7 @@ output:
 ---
 
 ```{r env, echo = F, warning = F, message = F}
-pacman::p_load(knitr, tidyverse, readr, magrittr); library(rdevteam)
+pacman::p_load(knitr, tidyverse, readr, magrittr, igraph); library(rdevteam)
 opts_chunk$set(fig.path = "output/figure/", fig.align = "center", out.width = "80%", warning = F, message = F)
 ```
 
@@ -36,3 +36,17 @@ library(rdevteam)
 naverRelation1("한국")
 naverRelation2("한국")
 ```
+
+### 네트워크 시각화 : `networkPlot()`
+
+```{r eval = F}
+library(dplyr)
+library(igraph)
+
+network_graph <- naverRelation2("한국") %>%
+  count(R2, R1) %>%
+  graph_from_data_frame
+  
+networkPlot(network_graph)
+```
+

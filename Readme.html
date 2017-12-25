@@ -11,7 +11,7 @@
 
 <meta name="author" content="R Dev Team" />
 
-<meta name="date" content="2017-12-16" />
+<meta name="date" content="2017-12-25" />
 
 <title>README</title>
 
@@ -219,7 +219,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">README</h1>
 <h4 class="author"><em><a href="https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/">R Dev Team</a></em></h4>
-<h4 class="date"><em>2017-12-16</em></h4>
+<h4 class="date"><em>2017-12-25</em></h4>
 
 </div>
 
@@ -236,197 +236,37 @@ library(rdevteam)</code></pre>
 <div id="---naverrelation1-naverrelation2" class="section level3">
 <h3>네이버 연관검색어 추출 : <code>naverRelation1()</code>, <code>naverRelation2()</code></h3>
 <pre class="r"><code>naverRelation1(&quot;한국&quot;)</code></pre>
-<pre><code>##  [1] &quot;미국&quot;                     &quot;핀란드&quot;                  
-##  [3] &quot;러시아&quot;                   &quot;영국&quot;                    
-##  [5] &quot;인도&quot;                     &quot;프랑스&quot;                  
-##  [7] &quot;캐나다&quot;                   &quot;대한민국&quot;                
-##  [9] &quot;호주&quot;                     &quot;세계 GDP 순위&quot;           
-## [11] &quot;대만&quot;                     &quot;태국&quot;                    
-## [13] &quot;베트남&quot;                   &quot;한국 한자&quot;               
-## [15] &quot;중국 한국기자&quot;            &quot;필리핀&quot;                  
-## [17] &quot;gdp&quot;                      &quot;이탈리아&quot;                
-## [19] &quot;중국경호원 한국기자 폭행&quot; &quot;인도네시아&quot;</code></pre>
+<pre><code>##  [1] &quot;미국&quot;          &quot;러시아&quot;        &quot;영국&quot;          &quot;인도&quot;         
+##  [5] &quot;가나&quot;          &quot;핀란드&quot;        &quot;프랑스&quot;        &quot;태국&quot;         
+##  [9] &quot;캐나다&quot;        &quot;세계 GDP 순위&quot; &quot;대만&quot;          &quot;호주&quot;         
+## [13] &quot;베트남&quot;        &quot;한국 한자&quot;     &quot;gdp&quot;           &quot;이탈리아&quot;     
+## [17] &quot;필리핀&quot;        &quot;남한&quot;          &quot;인도네시아&quot;    &quot;스페인&quot;</code></pre>
 <pre class="r"><code>naverRelation2(&quot;한국&quot;)</code></pre>
-<pre><code>## $미국
-##  [1] &quot;일본&quot;          &quot;대한민국&quot;      &quot;한국&quot;          &quot;영국&quot;         
-##  [5] &quot;캐나다&quot;        &quot;인도&quot;          &quot;프랑스&quot;        &quot;독일&quot;         
-##  [9] &quot;호주&quot;          &quot;브라질&quot;        &quot;이탈리아&quot;      &quot;미국지도&quot;     
-## [13] &quot;미국여행&quot;      &quot;미국시간&quot;      &quot;미국 수도&quot;     &quot;미국 국가정보&quot;
-## [17] &quot;미국대사관&quot;    &quot;미국 축구&quot;     &quot;미국 산&quot;       &quot;카나다&quot;       
-## 
-## $핀란드
-##  [1] &quot;핀란드 페트리 결혼&quot;            &quot;대한민국&quot;                     
-##  [3] &quot;핀란드 여행&quot;                   &quot;한국&quot;                         
-##  [5] &quot;핀란드 빌푸 직업&quot;              &quot;노르웨이&quot;                     
-##  [7] &quot;폴란드&quot;                        &quot;덴마크&quot;                       
-##  [9] &quot;핀란드 비행시간&quot;               &quot;핀란드 1인당 gdp&quot;             
-## [11] &quot;어서와 한국은 처음이지 핀란드&quot; &quot;핀란드 물가&quot;                  
-## [13] &quot;핀란드 국민소득&quot;               &quot;핀란드 계절&quot;                  
-## [15] &quot;핀란드 이민&quot;                   &quot;핀란드 gnp&quot;                   
-## [17] &quot;핀란드 뚜룬&quot;                   &quot;어서와 한국은 처음이지&quot;       
-## [19] &quot;핀란드 면적&quot;                   &quot;세계지도&quot;                     
-## 
-## $러시아
-##  [1] &quot;중국&quot;                &quot;대한민국&quot;            &quot;캐나다&quot;             
-##  [4] &quot;인도&quot;                &quot;일본&quot;                &quot;IOC 러시아&quot;         
-##  [7] &quot;한국&quot;                &quot;프랑스&quot;              &quot;독일&quot;               
-## [10] &quot;올림픽 러시아&quot;       &quot;영국&quot;                &quot;러시아 날씨&quot;        
-## [13] &quot;러시아 유럽&quot;         &quot;러시아 아시아&quot;       &quot;러시아 블라디보스톡&quot;
-## [16] &quot;브라질&quot;              &quot;호주&quot;                &quot;이탈리아&quot;           
-## [19] &quot;러시아 대륙&quot;         &quot;동계올림픽 러시아&quot;  
-## 
-## $영국
-##  [1] &quot;프랑스&quot;      &quot;미국&quot;        &quot;독일&quot;        &quot;잉글랜드&quot;    &quot;일본&quot;       
-##  [6] &quot;중국&quot;        &quot;대한민국&quot;    &quot;한국&quot;        &quot;이탈리아&quot;    &quot;런던&quot;       
-## [11] &quot;러시아&quot;      &quot;영국 여행&quot;   &quot;캐나다&quot;      &quot;영국 지도&quot;   &quot;호주&quot;       
-## [16] &quot;스페인&quot;      &quot;스위스&quot;      &quot;영국 관광지&quot; &quot;아일랜드&quot;    &quot;영국 음식&quot;  
-## 
-## $인도
-##  [1] &quot;인도네시아&quot;  &quot;미국&quot;        &quot;러시아&quot;      &quot;대한민국&quot;    &quot;한국&quot;       
-##  [6] &quot;일본&quot;        &quot;인도여행&quot;    &quot;캐나다&quot;      &quot;인도 지도&quot;   &quot;브라질&quot;     
-## [11] &quot;영국&quot;        &quot;독일&quot;        &quot;호주&quot;        &quot;프랑스&quot;      &quot;내연남 성형&quot;
-## [16] &quot;인도 종교&quot;   &quot;베트남&quot;      &quot;파키스탄&quot;    &quot;인도 위치&quot;   &quot;인도 음식&quot;  
-## 
-## $프랑스
-##  [1] &quot;독일&quot;                        &quot;영국&quot;                       
-##  [3] &quot;이탈리아&quot;                    &quot;미국&quot;                       
-##  [5] &quot;어서와&quot;                      &quot;러시아&quot;                     
-##  [7] &quot;대한민국&quot;                    &quot;일본&quot;                       
-##  [9] &quot;프랑스 음식&quot;                 &quot;중국&quot;                       
-## [11] &quot;프랑스 여행&quot;                 &quot;프랑스 전통음식&quot;            
-## [13] &quot;프랑스 전통의상&quot;             &quot;스위스&quot;                     
-## [15] &quot;스페인&quot;                      &quot;어서와 한국은&quot;              
-## [17] &quot;한국은 처음이지&quot;             &quot;한국&quot;                       
-## [19] &quot;네덜란드&quot;                    &quot;어서와 한국은 처음이지 로빈&quot;
-## 
-## $캐나다
-##  [1] &quot;미국&quot;            &quot;러시아&quot;          &quot;호주&quot;           
-##  [4] &quot;중국&quot;            &quot;캐나다 지도&quot;     &quot;대한민국&quot;       
-##  [7] &quot;캐나다 여행&quot;     &quot;영국&quot;            &quot;인도&quot;           
-## [10] &quot;한국&quot;            &quot;일본&quot;            &quot;캐나다 음식&quot;    
-## [13] &quot;브라질&quot;          &quot;캐나다 시간&quot;     &quot;캐나다 위치&quot;    
-## [16] &quot;독일&quot;            &quot;캐나다 관광지&quot;   &quot;캐나다 수도&quot;    
-## [19] &quot;프랑스&quot;          &quot;캐나다 전통의상&quot;
-## 
-## $대한민국
-##  [1] &quot;핀란드&quot;        &quot;미국&quot;          &quot;일본&quot;          &quot;중국&quot;         
-##  [5] &quot;북한&quot;          &quot;러시아&quot;        &quot;대한민국 축구&quot; &quot;세계 GDP 순위&quot;
-##  [9] &quot;영국&quot;          &quot;프랑스&quot;        &quot;대한민국 지도&quot; &quot;인도&quot;         
-## [13] &quot;독일&quot;          &quot;캐나다&quot;        &quot;베트남&quot;        &quot;대만&quot;         
-## [17] &quot;이스라엘&quot;      &quot;이탈리아&quot;      &quot;스웨덴&quot;        &quot;한국&quot;         
-## 
-## $호주
-##  [1] &quot;오스트레일리아&quot;    &quot;캐나다&quot;            &quot;호주 지도&quot;        
-##  [4] &quot;오스트리아&quot;        &quot;미국&quot;              &quot;영국&quot;             
-##  [7] &quot;호주 위치&quot;         &quot;대한민국&quot;          &quot;호주 아시아&quot;      
-## [10] &quot;한국&quot;              &quot;호주 수도&quot;         &quot;시드니 쇼핑리스트&quot;
-## [13] &quot;중국&quot;              &quot;러시아&quot;            &quot;호주 시간&quot;        
-## [16] &quot;호주와의 관계&quot;     &quot;호주 비행시간&quot;     &quot;인도&quot;             
-## [19] &quot;호주 시드니&quot;       &quot;이력서 호주&quot;      
-## 
-## $`세계 GDP 순위`
-##  [1] &quot;세계지도&quot;           &quot;세상&quot;               &quot;각 나라의 전통의상&quot;
-##  [4] &quot;세계 영어로&quot;        &quot;새로운 세계&quot;        &quot;제3세계&quot;           
-##  [7] &quot;다음세계&quot;           &quot;판타지 세계&quot;        &quot;남자들의 세계&quot;     
-## [10] &quot;이세계&quot;             &quot;다른세계&quot;           &quot;건축세계&quot;          
-## [13] &quot;알바세계&quot;           &quot;잃어버린 세계&quot;      &quot;군사세계&quot;          
-## [16] &quot;꿈의 세계&quot;          &quot;디지몬 세계&quot;        &quot;식품세계&quot;          
-## [19] &quot;인천세계&quot;           &quot;난세계&quot;            
-## 
-## $대만
-##  [1] &quot;홍콩&quot;            &quot;태국&quot;            &quot;대만여행&quot;       
-##  [4] &quot;대만 위치&quot;       &quot;대한민국&quot;        &quot;중국&quot;           
-##  [7] &quot;대만 항공권&quot;     &quot;한국&quot;            &quot;베트남&quot;         
-## [10] &quot;대만 쇼핑리스트&quot; &quot;대만 물가&quot;       &quot;대만 비행시간&quot;  
-## [13] &quot;홍콩 마카오&quot;     &quot;대만인&quot;          &quot;싱가포르&quot;       
-## [16] &quot;대만 타이완&quot;     &quot;대만 비행기&quot;     &quot;마카오&quot;         
-## [19] &quot;대만 바둑요정&quot;   &quot;방콕&quot;           
-## 
-## $태국
-##  [1] &quot;대만&quot;           &quot;태국여행&quot;       &quot;베트남&quot;         &quot;태국버스사고&quot;  
-##  [5] &quot;타이완&quot;         &quot;필리핀&quot;         &quot;태국버스전복&quot;   &quot;타이&quot;          
-##  [9] &quot;태국 날씨&quot;      &quot;출장태국마사지&quot; &quot;말레이시아&quot;     &quot;한국&quot;          
-## [13] &quot;대한민국&quot;       &quot;인도네시아&quot;     &quot;태국 자유여행&quot;  &quot;태국 위치&quot;     
-## [17] &quot;라오스&quot;         &quot;태국 관광버스&quot;  &quot;타이페이&quot;       &quot;태국 항공권&quot;   
-## 
-## $베트남
-##  [1] &quot;베트남 여행&quot;     &quot;태국&quot;            &quot;베트남 날씨&quot;    
-##  [4] &quot;필리핀&quot;          &quot;대한민국&quot;        &quot;캄보디아&quot;       
-##  [7] &quot;베트남 시간&quot;     &quot;인도네시아&quot;      &quot;호치민&quot;         
-## [10] &quot;대만&quot;            &quot;한국&quot;            &quot;베트남 음식&quot;    
-## [13] &quot;베트남 비행시간&quot; &quot;베트남 지도&quot;     &quot;라오스&quot;         
-## [16] &quot;베트남 기념품&quot;   &quot;일본&quot;            &quot;말레이시아&quot;     
-## [19] &quot;베트남 항공권&quot;   &quot;베트남 비행기&quot;  
-## 
-## $`한국 한자`
-##  [1] &quot;미국&quot;                     &quot;핀란드&quot;                  
-##  [3] &quot;러시아&quot;                   &quot;영국&quot;                    
-##  [5] &quot;인도&quot;                     &quot;프랑스&quot;                  
-##  [7] &quot;캐나다&quot;                   &quot;대한민국&quot;                
-##  [9] &quot;호주&quot;                     &quot;세계 GDP 순위&quot;           
-## [11] &quot;대만&quot;                     &quot;태국&quot;                    
-## [13] &quot;베트남&quot;                   &quot;한국 한자&quot;               
-## [15] &quot;중국 한국기자&quot;            &quot;필리핀&quot;                  
-## [17] &quot;gdp&quot;                      &quot;이탈리아&quot;                
-## [19] &quot;중국경호원 한국기자 폭행&quot; &quot;인도네시아&quot;              
-## 
-## $`중국 한국기자`
-##  [1] &quot;중국 경호원 기자 폭행&quot;    &quot;중국 한국기자 폭행&quot;      
-##  [3] &quot;러시아&quot;                   &quot;대한민국&quot;                
-##  [5] &quot;중국경호원 한국기자 폭행&quot; &quot;캐나다&quot;                  
-##  [7] &quot;영국&quot;                     &quot;중국 경호&quot;               
-##  [9] &quot;독일&quot;                     &quot;프랑스&quot;                  
-## [11] &quot;청와대 기자 폭행&quot;         &quot;기자폭행 중국반응&quot;       
-## [13] &quot;중국 사진기자&quot;            &quot;이충우 기자&quot;             
-## [15] &quot;중국기자폭행사건&quot;         &quot;수행기자 폭행&quot;           
-## [17] &quot;중국지도&quot;                 &quot;문재인 기자 폭행&quot;        
-## [19] &quot;중국 기자단 폭행&quot;        
-## 
-## $필리핀
-##  [1] &quot;한국판 콘에어&quot;       &quot;필리핀 여행&quot;         &quot;필리핀 범죄자 송환&quot; 
-##  [4] &quot;베트남&quot;              &quot;태국&quot;                &quot;필리핀 47명&quot;        
-##  [7] &quot;보라카이&quot;            &quot;필리핀 날씨&quot;         &quot;필리핀도피범&quot;       
-## [10] &quot;필리핀 세부 위험&quot;    &quot;필리핀 세부&quot;         &quot;압송&quot;               
-## [13] &quot;전세기&quot;              &quot;세부&quot;                &quot;인도네시아&quot;         
-## [16] &quot;세부 기념품&quot;         &quot;보라카이 쇼핑리스트&quot; &quot;말레이시아&quot;         
-## [19] &quot;집단송환&quot;            &quot;대한민국&quot;           
-## 
-## $gdp
-##  [1] &quot;gdp 뜻&quot;         &quot;대한민국&quot;       &quot;한국 gdp&quot;       &quot;gni&quot;           
-##  [5] &quot;한국&quot;           &quot;세계 GNP 순위&quot;  &quot;미국&quot;           &quot;국민소득&quot;      
-##  [9] &quot;gnp 뜻&quot;         &quot;gdp gnp&quot;        &quot;세계 경제 순위&quot; &quot;중국&quot;          
-## [13] &quot;대한민국 gdp&quot;   &quot;1인당 국민소득&quot; &quot;일본&quot;           &quot;gdp 계산&quot;      
-## [17] &quot;gross&quot;          &quot;북한 gdp&quot;       &quot;10년후&quot;         &quot;세계 GNI 순위&quot; 
-## 
-## $이탈리아
-##  [1] &quot;프랑스&quot;            &quot;독일&quot;              &quot;이탈리아 음식&quot;    
-##  [4] &quot;영국&quot;              &quot;스페인&quot;            &quot;스위스&quot;           
-##  [7] &quot;대한민국&quot;          &quot;이탈리아 전통의상&quot; &quot;미국&quot;             
-## [10] &quot;그리스&quot;            &quot;이탈리아 문화&quot;     &quot;이탈리아 관광지&quot;  
-## [13] &quot;이탈리아어&quot;        &quot;러시아&quot;            &quot;이탈리아 전통음식&quot;
-## [16] &quot;이탈리아 여행&quot;     &quot;일본&quot;              &quot;이탈리아 기후&quot;    
-## [19] &quot;중국&quot;              &quot;이탈리아 국기&quot;    
-## 
-## $`중국경호원 한국기자 폭행`
-##  [1] &quot;중국 한국기자 폭행&quot;    &quot;경호원 폭행&quot;          
-##  [3] &quot;경호&quot;                  &quot;중국 경호원 한국 기자&quot;
-##  [5] &quot;수행기자 폭행&quot;         &quot;기자단 폭행&quot;          
-##  [7] &quot;대통령 경호원&quot;         &quot;한국기자단 폭행&quot;      
-##  [9] &quot;이충우 기자&quot;           &quot;기자폭행 영상&quot;        
-## [11] &quot;한국기자집단폭행&quot;      &quot;경호원기자폭행&quot;       
-## [13] &quot;사진기자 폭행&quot;         &quot;청와대 기자 폭행&quot;     
-## [15] &quot;취재진 폭행&quot;           &quot;중국방문기자폭행&quot;     
-## [17] &quot;중국 기자단 폭행&quot;      &quot;기자 경호&quot;            
-## [19] &quot;중국기자폭행사건&quot;      &quot;기사폭행&quot;             
-## 
-## $인도네시아
-##  [1] &quot;인도&quot;                &quot;인도네시아 지도&quot;     &quot;인도네시아 여행&quot;    
-##  [4] &quot;말레이시아&quot;          &quot;인도네시아 환율&quot;     &quot;인도네시아 시간&quot;    
-##  [7] &quot;인도네시아 위치&quot;     &quot;베트남&quot;              &quot;인도네시아 종교&quot;    
-## [10] &quot;태국&quot;                &quot;인도네시아 언어&quot;     &quot;필리핀&quot;             
-## [13] &quot;인도네시아어&quot;        &quot;대한민국&quot;            &quot;인도네시아 날씨&quot;    
-## [16] &quot;미국&quot;                &quot;인도네시아 자카르타&quot; &quot;중국&quot;               
-## [19] &quot;인도네시아 발리&quot;     &quot;인도네시아 인도&quot;</code></pre>
+<pre><code>## # A tibble: 380 x 2
+##       R1            R2
+##    &lt;chr&gt;         &lt;chr&gt;
+##  1  미국      대한민국
+##  2  미국          한국
+##  3  미국          영국
+##  4  미국          인도
+##  5  미국        캐나다
+##  6  미국          독일
+##  7  미국        프랑스
+##  8  미국          호주
+##  9  미국        브라질
+## 10  미국 세계 GDP 순위
+## # ... with 370 more rows</code></pre>
+</div>
+<div id="--networkplot" class="section level3">
+<h3>네트워크 시각화 : <code>networkPlot()</code></h3>
+<pre class="r"><code>library(dplyr)
+library(igraph)
+
+network_graph &lt;- naverRelation2(&quot;한국&quot;) %&gt;%
+  count(R2, R1) %&gt;%
+  graph_from_data_frame
+  
+networkPlot(network_graph)</code></pre>
 </div>
 </div>
 
