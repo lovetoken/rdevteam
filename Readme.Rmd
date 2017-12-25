@@ -14,7 +14,7 @@ output:
 
 ```{r env, echo = F, warning = F, message = F}
 pacman::p_load(knitr, tidyverse, readr, magrittr, igraph); library(rdevteam)
-opts_chunk$set(fig.path = "output/figure/", fig.align = "center", out.width = "80%", warning = F, message = F)
+opts_chunk$set(fig.path = "image/figure/", fig.align = "center", out.width = "80%", warning = F, message = F)
 ```
 
 <br><br>
@@ -50,3 +50,10 @@ network_graph <- naverRelation2("한국") %>%
 networkPlot(network_graph)
 ```
 
+![](image/networkPlot.png)
+
+<br><br>
+
+## License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)

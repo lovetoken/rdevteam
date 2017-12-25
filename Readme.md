@@ -1,18 +1,3 @@
----
-title: README
-author: <a href = "https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/">R Dev Team</a>
-date: "2017-12-25"
-output: 
-  html_document:
-    fig_height: 6
-    theme: yeti
-    toc: yes
-    toc_depth: 3
-    toc_float: yes
-    keep_md: yes
----
-
-
 
 <br><br>
 
@@ -78,3 +63,10 @@ network_graph <- naverRelation2("한국") %>%
 networkPlot(network_graph)
 ```
 
+![](image/networkPlot.png)
+
+<br><br>
+
+## License
+
+[GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)
