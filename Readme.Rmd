@@ -17,8 +17,6 @@ pacman::p_load(knitr, tidyverse, readr, magrittr, igraph); library(rdevteam)
 opts_chunk$set(fig.path = "image/figure/", fig.align = "center", out.width = "80%", warning = F, message = F)
 ```
 
-<br><br>
-
 ## Install
 
 ```{r eval = F}
@@ -33,9 +31,20 @@ library(rdevteam)
 ### 네이버 연관검색어 추출 : `naverRelation1()`, `naverRelation2()`
 
 ```{r}
-naverRelation1("한국")
-naverRelation2("한국")
+ex1 <- naverRelation1("한국")
+ex2 <- naverRelation2("한국")
+
+ex1
+ex2
 ```
+
+```{r eval = F}
+library(networkD3)
+
+simpleNetwork(ex2)
+```
+
+<br>
 
 ### 네트워크 시각화 : `networkPlot()`
 
@@ -46,11 +55,9 @@ library(igraph)
 network_graph <- naverRelation2("한국") %>%
   count(R2, R1) %>%
   graph_from_data_frame
-  
+
 networkPlot(network_graph)
 ```
-
-![](image/networkPlot.png)
 
 <br><br>
 

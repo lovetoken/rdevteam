@@ -16,6 +16,9 @@ tibble type data.frame
 특정 키워드를 입력하여 실행하면 그 키워드를 기준으로 검색되는 네이버 연관검색어가 2차 연관검색어까지 데이터프레임 형태로 반환됩니다.
 }
 \examples{
-naverRelation2("한국")
-naverRelation2("사과")
+data(example_keywords)
+
+example_keywords[1, 2] \%>\%
+  pull \%>\%
+  naverRelation2
 }

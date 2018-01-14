@@ -13,6 +13,6 @@ naverRelation1(x)
 특정 키워드를 입력하여 실행하면 그 키워드를 기준으로 검색되는 네이버 연관검색어가 벡터형으로 반환됩니다.
 }
 \examples{
-naverRelation1('한국')
-naverRelation1('사과')
+naverRelation1("한국")
+naverRelation1("사과")
 }
