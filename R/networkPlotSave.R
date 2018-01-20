@@ -25,7 +25,11 @@ nvrGraph <- function(input = '사과'){
     d2 <- data.frame(R1 = input, R2 = d1)
     df_union <- rbind(d2, df)
 
+    ## save Data to DB
+    saveHistory(df_union)
+
     ## network object
+
     df_g <- graph.data.frame(df_union)
 
     V(df_g)$label.cex <- ifelse(V(df_g)$name == input, 2,

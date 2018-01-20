@@ -14,7 +14,7 @@ saveHistory <- function(df){
   con <- dbConnect(SQLite(), "nvrHistory.sqlite")
 
   now <- Sys.time()
-  time <- format(now, format = "%Y%m%d%H%M%S")
+  time <- as.character(format(now, format = "%Y%m%d%H%M%S"))
   result <- data.frame(regDate = time, df)
 
   # DB에 데이터 프레임 기록하기
@@ -40,3 +40,5 @@ loadHistory <- function(){
   return(result)
   print("로드하였습니다.")
 }
+
+loadHistory()
