@@ -46,17 +46,10 @@ simpleNetwork(ex2)
 
 <br>
 
-### 네트워크 시각화 : `networkPlot()`
+### 네트워크 시각화 : `nvrGraph()`
 
 ```{r eval = F}
-library(dplyr)
-library(igraph)
-
-network_graph <- naverRelation2("한국") %>%
-  count(R2, R1) %>%
-  graph_from_data_frame
-
-networkPlot(network_graph)
+nvrGraph("사과")
 ```
 
 <br><br>

@@ -1,19 +1,3 @@
----
-title: README
-author: <a href = "https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/">R Dev Team</a>
-date: "2018-01-14"
-output: 
-  html_document:
-    fig_height: 6
-    theme: yeti
-    toc: yes
-    toc_depth: 3
-    toc_float: yes
-    keep_md: yes
----
-
-
-
 ## Install
 
 
@@ -37,11 +21,11 @@ ex1
 ```
 
 ```
-##  [1] "미국"          "북한"          "영국"          "러시아"       
-##  [5] "인도"          "독일"          "프랑스"        "태국"         
-##  [9] "호주"          "베트남"        "스페인"        "대만"         
-## [13] "캐나다"        "세계 GDP 순위" "남한"          "gdp"          
-## [17] "한국 한자"     "핀란드"        "필리핀"        "인도네시아"
+##  [1] "미국"          "일본"          "북한"          "영국"         
+##  [5] "러시아"        "인도"          "태국"          "독일"         
+##  [9] "대만"          "프랑스"        "캐나다"        "호주"         
+## [13] "베트남"        "한국 축구"     "세계 GDP 순위" "스페인"       
+## [17] "한국 한자"     "gdp"           "남한"          "필리핀"
 ```
 
 ```r
@@ -60,8 +44,8 @@ ex2
 ##  6  미국      인도
 ##  7  미국    프랑스
 ##  8  미국      독일
-##  9  미국 미국 날씨
-## 10  미국    브라질
+##  9  미국    브라질
+## 10  미국 미국 날씨
 ## # ... with 370 more rows
 ```
 
@@ -74,18 +58,11 @@ simpleNetwork(ex2)
 
 <br>
 
-### 네트워크 시각화 : `networkPlot()`
+### 네트워크 시각화 : `nvrGraph()`
 
 
 ```r
-library(dplyr)
-library(igraph)
-
-network_graph <- naverRelation2("한국") %>%
-  count(R2, R1) %>%
-  graph_from_data_frame
-
-networkPlot(network_graph)
+nvrGraph("사과")
 ```
 
 <br><br>

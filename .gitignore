@@ -64,3 +64,9 @@ vignettes/*.pdf
 
 # End of https://www.gitignore.io/api/r,macos
 .Rproj.user
+
+### For custom ###
+
+*.png
+*.jpg
+*.jpeg
