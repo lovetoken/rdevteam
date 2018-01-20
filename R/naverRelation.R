@@ -3,8 +3,8 @@
 #' @param x 키워드를 캐릭터 형식으로 입력합니다
 #' @export
 #' @examples
-#' naverRelation1('한국')
-#' naverRelation1('사과')
+#' naverRelation1("한국")
+#' naverRelation1("사과")
 
 naverRelation1 <- function(x){
 
@@ -32,8 +32,11 @@ naverRelation1 <- function(x){
 #' @export
 #' @return tibble type data.frame
 #' @examples
-#' naverRelation2("한국")
-#' naverRelation2("사과")
+#' data(example_keywords)
+#'
+#' example_keywords[1, 2] %>%
+#'   pull %>%
+#'   naverRelation2
 
 naverRelation2 <- function(x){
 
