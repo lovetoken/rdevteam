@@ -1,4 +1,5 @@
 library(shiny)
+library(rdevteam)
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -22,9 +23,10 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
    
-   output$test <- renderPrint({
+   output$test <- renderText({
       
-     print(input$text)
+     first <- naverRelation1(input$text)
+     return(first)
    })
 }
 
