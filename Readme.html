@@ -11,7 +11,7 @@
 
 <meta name="author" content="R Dev Team" />
 
-<meta name="date" content="2018-01-14" />
+<meta name="date" content="2018-01-20" />
 
 <title>README</title>
 
@@ -219,7 +219,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">README</h1>
 <h4 class="author"><em><a href="https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/">R Dev Team</a></em></h4>
-<h4 class="date"><em>2018-01-14</em></h4>
+<h4 class="date"><em>2018-01-20</em></h4>
 
 </div>
 
@@ -238,11 +238,11 @@ library(rdevteam)</code></pre>
 ex2 &lt;- naverRelation2(&quot;한국&quot;)
 
 ex1</code></pre>
-<pre><code>##  [1] &quot;미국&quot;          &quot;북한&quot;          &quot;영국&quot;          &quot;러시아&quot;       
-##  [5] &quot;인도&quot;          &quot;독일&quot;          &quot;프랑스&quot;        &quot;태국&quot;         
-##  [9] &quot;호주&quot;          &quot;베트남&quot;        &quot;스페인&quot;        &quot;대만&quot;         
-## [13] &quot;캐나다&quot;        &quot;세계 GDP 순위&quot; &quot;남한&quot;          &quot;gdp&quot;          
-## [17] &quot;한국 한자&quot;     &quot;핀란드&quot;        &quot;필리핀&quot;        &quot;인도네시아&quot;</code></pre>
+<pre><code>##  [1] &quot;미국&quot;          &quot;일본&quot;          &quot;북한&quot;          &quot;영국&quot;         
+##  [5] &quot;러시아&quot;        &quot;인도&quot;          &quot;태국&quot;          &quot;독일&quot;         
+##  [9] &quot;대만&quot;          &quot;프랑스&quot;        &quot;캐나다&quot;        &quot;호주&quot;         
+## [13] &quot;베트남&quot;        &quot;한국 축구&quot;     &quot;세계 GDP 순위&quot; &quot;스페인&quot;       
+## [17] &quot;한국 한자&quot;     &quot;gdp&quot;           &quot;남한&quot;          &quot;필리핀&quot;</code></pre>
 <pre class="r"><code>ex2</code></pre>
 <pre><code>## # A tibble: 380 x 2
 ##       R1        R2
@@ -255,24 +255,17 @@ ex1</code></pre>
 ##  6  미국      인도
 ##  7  미국    프랑스
 ##  8  미국      독일
-##  9  미국 미국 날씨
-## 10  미국    브라질
+##  9  미국    브라질
+## 10  미국 미국 날씨
 ## # ... with 370 more rows</code></pre>
 <pre class="r"><code>library(networkD3)
 
 simpleNetwork(ex2)</code></pre>
 <p><br></p>
 </div>
-<div id="--networkplot" class="section level3">
-<h3>네트워크 시각화 : <code>networkPlot()</code></h3>
-<pre class="r"><code>library(dplyr)
-library(igraph)
-
-network_graph &lt;- naverRelation2(&quot;한국&quot;) %&gt;%
-  count(R2, R1) %&gt;%
-  graph_from_data_frame
-
-networkPlot(network_graph)</code></pre>
+<div id="--nvrgraph" class="section level3">
+<h3>네트워크 시각화 : <code>nvrGraph()</code></h3>
+<pre class="r"><code>nvrGraph(&quot;사과&quot;)</code></pre>
 <p><br><br></p>
 </div>
 </div>

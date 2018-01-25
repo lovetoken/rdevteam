@@ -1,5 +1,6 @@
 #' Network plot for preprocessed naverRelation2 object
-#' @description 2차 연관검색어에 대한 네트워크 시각화 함수입니다.
+#'
+#' 2차 연관검색어에 대한 네트워크 시각화 함수입니다.
 #' @param x
 #' @export
 #' @examples
@@ -11,7 +12,7 @@
 networkPlot <- function(x) {
 
   ## Pre
-  stopifnot(require(ggplot2)); stopifnot(require(igraph)); stopifnot(require(ggraph)); stopifnot(require(grid))
+  stopifnot(require(ggplot2), require(igraph), require(ggraph), require(grid))
 
   ## Content
   res <- x %>% ggraph(layout = "auto") +
@@ -34,6 +35,5 @@ networkPlot <- function(x) {
           panel.grid.minor=element_blank(),
           plot.background=element_blank())
 
-  ## Return
   return(res)
 }

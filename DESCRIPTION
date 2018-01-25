@@ -1,12 +1,12 @@
 Package: rdevteam
 Type: Package
 Title: R Dev Team R packages
-Version: 0.1.2
-Author: HyoJin Song, YoungJun Na, all_thinks, Kwon4509, Eunkwang, GiSeop Lee
-Maintainer: lovetoken <lt.lovetoken@gmail.net>
+Version: 0.1.3
+Author: Eunkwang, GiSeop Lee, Kwon4509, YoungJun Na, all_thinks, HyoJin Song
+Maintainer: HyoJin Song <lt.lovetoken@gmail.net>
 Description: R Dev Team packages
 Depends: R (>= 3.4)
-Imports: lava, stringr, rvest, dplyr, ggplot2, igraph, ggraph, grid, reshape2
+Imports: lava, stringr, rvest, dplyr, ggplot2, igraph, ggraph, grid, reshape2, RSQLite
 License: GPL-2
 URL: https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/, https://github.com/lovetoken/rdevteam
 Encoding: UTF-8
