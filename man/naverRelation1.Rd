@@ -2,17 +2,20 @@
 % Please edit documentation in R/naverRelation.R
 \name{naverRelation1}
 \alias{naverRelation1}
-\title{Naver 1차 연관검색어 추출}
+\title{First relation search words return on Naver}
 \usage{
 naverRelation1(x)
 }
 \arguments{
-\item{x}{키워드를 캐릭터 형식으로 입력합니다}
+\item{x}{a character of search keyword}
+}
+\value{
+a vector; character type
 }
 \description{
-특정 키워드를 입력하여 실행하면 그 키워드를 기준으로 검색되는 네이버 연관검색어가 벡터형으로 반환됩니다.
+First relation search words return on Naver
 }
 \examples{
-naverRelation1("한국")
-naverRelation1("사과")
+naverRelation1("korea")
+naverRelation1("apple")
 }

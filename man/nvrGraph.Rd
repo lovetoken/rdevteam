@@ -2,16 +2,16 @@
 % Please edit documentation in R/networkPlotSave.R
 \name{nvrGraph}
 \alias{nvrGraph}
-\title{연관 검색어 네트워크 그래프 작성}
+\title{Network plot about First & Second relation search words return on Naver}
 \usage{
 nvrGraph(input)
 }
 \arguments{
-\item{input}{키워드를 캐릭터 형식으로 입력합니다.}
+\item{input}{a character; search keyword}
 }
 \description{
-검색어를 입력하면 네트워크 그래프를 그려서 파일로 남깁니다.
+Network plot about First & Second relation search words return on Naver
 }
 \examples{
-nvrGraph("사과")
+nvrGraph("keyword")
 }

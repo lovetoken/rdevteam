@@ -2,16 +2,16 @@
 % Please edit documentation in R/networkPlot.R
 \name{networkPlot}
 \alias{networkPlot}
-\title{Network plot for preprocessed naverRelation2 object}
+\title{Network plot about preprocessed naverRelation2 result}
 \usage{
 networkPlot(x)
 }
+\arguments{
+\item{x}{return to \code{naverRelation2()} object}
+}
 \description{
-2차 연관검색어에 대한 네트워크 시각화 함수입니다.
+Network plot about preprocessed naverRelation2 result
 }
 \examples{
-network_graph <- naverRelation2("한국") \%>\%
-  count(R2, R1) \%>\%
-  graph_from_data_frame \%>\%
-  networkPlot
+networkPlot(naverRelation2("korea"))
 }
