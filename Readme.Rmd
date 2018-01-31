@@ -2,14 +2,7 @@
 title: README
 author: <a href = "https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/">R Dev Team</a>
 date: "`r Sys.Date()`"
-output: 
-  html_document:
-    fig_height: 6
-    theme: yeti
-    toc: yes
-    toc_depth: 3
-    toc_float: yes
-    keep_md: yes
+output: md_document
 ---
 
 ```{r env, echo = F, warning = F, message = F}
@@ -46,17 +39,10 @@ simpleNetwork(ex2)
 
 <br>
 
-### 네트워크 시각화 : `networkPlot()`
+### 네트워크 시각화 : `nvrGraph()`
 
 ```{r eval = F}
-library(dplyr)
-library(igraph)
-
-network_graph <- naverRelation2("한국") %>%
-  count(R2, R1) %>%
-  graph_from_data_frame
-
-networkPlot(network_graph)
+nvrGraph("사과")
 ```
 
 <br><br>
