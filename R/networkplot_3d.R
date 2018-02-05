@@ -8,7 +8,7 @@
 
   networkplot_3d <- function(x){
     
-    stopifnot(require(igraph), require(ggraph))
+    stopifnot(require(igraph), require(ggraph), require(networkD3))
     
     pre <- x %>%
       count(R2, R1) %>%
