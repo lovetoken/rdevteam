@@ -51,7 +51,6 @@ naverRelation2 <- function(x){
   for(i in html) html2[[i]] <- naverRelation1(i)
 
   res <- html2 %>%
-    lapply(FUN = function(x) gsub(paste0("\\b", x, "\\b", "|", "^", x, " ", "| ", x, "$"), "", x = x)) %>%
     melt %>%
     select(R1 = L1, R2 = value) %>%
     dplyr::filter(R2 != "") %>%
