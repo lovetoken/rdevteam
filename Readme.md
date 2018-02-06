@@ -42,6 +42,7 @@ Install
     library(networkD3)
 
     simpleNetwork(ex2)
+    networkplot_3d(ex2)
 
 <br>
 
