@@ -1,17 +1,15 @@
-#' 연관 검색어 네트워크 그래프 작성
+#' Network plot about First & Second relation search words return on Naver
 #'
-#' 검색어를 입력하면 네트워크 그래프를 그려서 파일로 남깁니다.
-#' @param input 키워드를 캐릭터 형식으로 입력합니다.
+#' Network plot about First & Second relation search words return on Naver
+#' @param input a character; search keyword
 #' @export
 #' @examples
-#' nvrGraph("사과")
+#' nvrGraph("keyword")
 
 nvrGraph <- function(input){
 
-  ## Pre
   stopifnot(is.character(input), require(reshape2), require(igraph))
 
-  ## Content
   d1 <- naverRelation1(input)
   df <- naverRelation2(input)
   d2 <- data.frame(R1 = input, R2 = d1)

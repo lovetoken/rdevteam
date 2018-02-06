@@ -3,17 +3,17 @@
 \name{saveHistory}
 \alias{saveHistory}
 \alias{loadHistory}
-\title{연관 검색 히스토리와 결과를 저장 및 로드하는 함수}
+\title{Save and Load relation search words to sqlite}
 \usage{
-saveHistory(df)
+saveHistory(x)
 
 loadHistory()
 }
 \arguments{
-\item{df}{\code{naverRelation2()} 함수를 통해 반환된 데이터프레임 타입 결과를 입력합니다.}
+\item{x}{return to \code{naverRelation2()} object}
 }
 \description{
-네이버 연관 검색어로 조회하였을 때 조회 히스토리를 DB로 저장하고 로드하는 함수입니다.
+Save and Load relation search words to sqlite
 }
 \examples{
 res <- naverRelation2("Keyword")
