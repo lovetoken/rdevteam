@@ -52,9 +52,11 @@ naverRelation2 <- function(x){
 
   res <- html2 %>%
     melt %>%
-    select(R1 = L1, R2 = value) %>%
-    dplyr::filter(R2 != "") %>%
-    tbl_df
+    mutate(R0 = x) %>%
+    apply(., 2, as.character) %>%
+    tbl_df %>%
+    select(R0, R1 = L1, R2 = value)
 
   return(res)
+  
 }
