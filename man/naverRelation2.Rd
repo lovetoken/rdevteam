@@ -2,20 +2,19 @@
 % Please edit documentation in R/naverRelation.R
 \name{naverRelation2}
 \alias{naverRelation2}
-\title{Naver 2차 연관검색어 추출}
+\title{First & Second relation search words return on Naver}
 \usage{
 naverRelation2(x)
 }
 \arguments{
-\item{x}{키워드를 캐릭터 형식으로 입력합니다}
+\item{x}{a character of search keyword}
 }
 \value{
 tibble type data.frame
 }
 \description{
-특정 키워드를 입력하여 실행하면 그 키워드를 기준으로 검색되는 네이버 연관검색어가 2차 연관검색어까지 데이터프레임 형태로 반환됩니다.
+First & Second relation search words return on Naver
 }
 \examples{
-naverRelation2("한국")
-naverRelation2("사과")
+naverRelation2("banana")
 }

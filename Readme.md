@@ -1,72 +1,58 @@
+Install
+-------
+
+    devtools::install_github("lovetoken/rdevteam")
+    library(rdevteam)
 
 <br><br>
 
-## Install
-
-
-```r
-devtools::install_github("lovetoken/rdevteam")
-library(rdevteam)
-```
-
-<br><br>
-
-## 주요기능
+주요기능
+--------
 
 ### 네이버 연관검색어 추출 : `naverRelation1()`, `naverRelation2()`
 
+    ex1 <- naverRelation1("한국")
+    ex2 <- naverRelation2("한국")
 
-```r
-naverRelation1("한국")
-```
+    ex1
 
-```
-##  [1] "미국"          "러시아"        "영국"          "인도"         
-##  [5] "가나"          "핀란드"        "프랑스"        "태국"         
-##  [9] "캐나다"        "세계 GDP 순위" "대만"          "호주"         
-## [13] "베트남"        "한국 한자"     "gdp"           "이탈리아"     
-## [17] "필리핀"        "남한"          "인도네시아"    "스페인"
-```
+    ##  [1] "미국"          "일본"          "북한"          "러시아"       
+    ##  [5] "한국 축구"     "영국"          "인도"          "베트남"       
+    ##  [9] "독일"          "세계 GDP 순위" "호주"          "프랑스"       
+    ## [13] "태국"          "캐나다"        "대만"          "스페인"       
+    ## [17] "gdp"           "한국 한자"     "필리핀"        "남한"
 
-```r
-naverRelation2("한국")
-```
+    ex2
 
-```
-## # A tibble: 380 x 2
-##       R1            R2
-##    <chr>         <chr>
-##  1  미국      대한민국
-##  2  미국          한국
-##  3  미국          영국
-##  4  미국          인도
-##  5  미국        캐나다
-##  6  미국          독일
-##  7  미국        프랑스
-##  8  미국          호주
-##  9  미국        브라질
-## 10  미국 세계 GDP 순위
-## # ... with 370 more rows
-```
+    ## # A tibble: 380 x 2
+    ##       R1            R2
+    ##    <chr>         <chr>
+    ##  1  미국        러시아
+    ##  2  미국      대한민국
+    ##  3  미국          한국
+    ##  4  미국          영국
+    ##  5  미국          인도
+    ##  6  미국        캐나다
+    ##  7  미국          독일
+    ##  8  미국        프랑스
+    ##  9  미국        브라질
+    ## 10  미국 세계 GDP 순위
+    ## # ... with 370 more rows
 
-### 네트워크 시각화 : `networkPlot()`
+    library(networkD3)
 
+    simpleNetwork(ex2)
+    networkplot_3d(ex2)
 
-```r
-library(dplyr)
-library(igraph)
+<br>
 
-network_graph <- naverRelation2("한국") %>%
-  count(R2, R1) %>%
-  graph_from_data_frame
-  
-networkPlot(network_graph)
-```
+### 네트워크 시각화 : `nvrGraph()`
 
-![](image/networkPlot.png)
+    nvrGraph("사과")
 
 <br><br>
 
-## License
+License
+-------
 
 [GPL-3](https://www.gnu.org/licenses/gpl-3.0.en.html)
