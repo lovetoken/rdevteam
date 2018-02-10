@@ -19,17 +19,17 @@
       graph_from_data_frame %>%
       igraph_to_networkD3
     
-    pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, 1,
-                              ifelse(pre$nodes$name %in% x$R1, 2, 3))
+    pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, "Keyword",
+                              ifelse(pre$nodes$name %in% x$R1, "1st Relation", "2nd Relation"))
     
     return(
       
-      forceNetwork(Links = pre$links, Nodes = pre$nodes, Nodesize = "group",
+      forceNetwork(Links = pre$links, Nodes = pre$nodes,
                    colourScale = JS("d3.scaleOrdinal(d3.schemeCategory10);"),
                    Source = "source", Target = "target",
                    Value = "value", NodeID = "name",
                    Group = "group", opacity = 0.9, zoom = T,
-                   fontSize = 20, fontFamily = "serif")
+                   fontSize = 20, fontFamily = "serif", legend = T)
       
     )
 
