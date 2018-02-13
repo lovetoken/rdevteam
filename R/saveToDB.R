@@ -4,8 +4,8 @@
 #' @param x return to \code{naverRelation2()} object
 #' @export
 #' @examples
-#' res <- naverRelation2("Keyword")
-#' saveHistory(res)
+#' relation <- naverRelation("Keyword", 2)
+#' saveHistory(relation)
 #' loadHistory()
 
 saveHistory <- function(x){
@@ -15,7 +15,9 @@ saveHistory <- function(x){
   time <- Sys.time() %>%
     format(format = "%Y%m%d%H%M%S") %>%
     as.character
-  result <- data.frame(regDate = time, x)
+  result <- x %>%
+    mutate(regDate = time) %>%
+    select(regDate, everything())
 
   con <- dbConnect(SQLite(), "nvrHistory.sqlite")
   dbWriteTable(con, "nvrHistory", result, append = TRUE)

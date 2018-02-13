@@ -16,7 +16,7 @@ loadHistory()
 Save and Load relation search words to sqlite
 }
 \examples{
-res <- naverRelation2("Keyword")
-saveHistory(res)
+relation <- naverRelation("Keyword", 2)
+saveHistory(relation)
 loadHistory()
 }
