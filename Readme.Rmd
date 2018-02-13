@@ -21,30 +21,21 @@ library(rdevteam)
 
 ## 주요기능
 
-### 네이버 연관검색어 추출 : `naverRelation1()`, `naverRelation2()`
+### 네이버 연관검색어 추출 : `naverRelation()`
 
-```{r}
-ex1 <- naverRelation1("한국")
-ex2 <- naverRelation2("한국")
+```{r eval = T}
+ex1 <- naverRelation("한국", 1)
+ex2 <- naverRelation("한국", 2)
 
 ex1
 ex2
 ```
 
 ```{r eval = F}
-library(networkD3)
-
-simpleNetwork(ex2)
-networkplot_3d(ex2)
+plot(ex2)
 ```
 
-<br>
-
-### 네트워크 시각화 : `nvrGraph()`
-
-```{r eval = F}
-nvrGraph("사과")
-```
+![](image/plot_ex2.png)
 
 <br><br>
 
