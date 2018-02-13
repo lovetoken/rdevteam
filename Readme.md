@@ -59,6 +59,8 @@ Install
 
     plot(ex2)
 
+![](image/plot_ex2.png)
+
 <br><br>
 
 License
