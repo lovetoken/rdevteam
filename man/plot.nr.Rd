@@ -13,6 +13,9 @@
 Network plot about preprocessed naverRelation result
 }
 \examples{
-relation <- naverRelation(keyword = "korea", depth = 2)
-plot(relation) # same as plot.nr(relation)
+nr1 <- naverRelation("korea", 1)
+plot(nr1)
+
+nr2 <- naverRelation("korea", 2)
+plot(nr2)
 }

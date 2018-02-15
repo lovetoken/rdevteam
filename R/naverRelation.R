@@ -8,7 +8,6 @@
 #' @export
 #' @examples
 #' naverRelation("banana", depth = 2)
-#'
 
 naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="){
 
@@ -50,6 +49,7 @@ naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.
   }
 
   class(res) <- class(res) %>% append("nr", after = 0)
+  attr(res, "depth") <- depth
   return(res)
 
 }

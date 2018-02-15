@@ -4,14 +4,17 @@
 #' @param x return to \code{naverRelation()} object
 #' @export
 #' @examples
-#' relation <- naverRelation(keyword = "korea", depth = 2)
-#' plot(relation) # same as plot.nr(relation)
+#' nr1 <- naverRelation("korea", 1)
+#' plot(nr1)
+#'
+#' nr2 <- naverRelation("korea", 2)
+#' plot(nr2)
 
 plot.nr <- function(x){
 
   stopifnot(require(igraph), require(networkD3), require(dplyr))
 
-  if(ncol(x) == 2){
+  if(attributes(x)$depth == 1){
 
     pre <- x %>%
       count(R1, R0) %>%
@@ -30,7 +33,7 @@ plot.nr <- function(x){
                               opacityNoHover = 0.1)
     )
 
-  } else if(ncol(x) == 3){
+  } else if(attributes(x)$depth == 2){
 
     x1 <- x[,1:2]; colnames(x1) <- c("R1", "R2")
     x2 <- x[,2:3]; colnames(x2) <- c("R1", "R2")

@@ -2,5 +2,6 @@
 
 S3method(plot,nr)
 export(loadHistory)
+export(naverRank)
 export(naverRelation)
 export(saveHistory)
