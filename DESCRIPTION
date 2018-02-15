@@ -1,10 +1,10 @@
 Package: rdevteam
 Type: Package
-Title: R Dev Team R packages
+Title: R dev korea team package
 Version: 0.2.1
 Author: Eunkwang, GiSeop Lee, Kwon4509, YoungJun Na, all_thinks, HyoJin Song
 Maintainer: HyoJin Song <lt.lovetoken@gmail.net>
-Description: R Dev Team packages
+Description: R dev korea team package. We have gathered useful functions to solve analysis assignment and create analysis application.
 Depends: R (>= 3.4)
 Imports: lava, stringr, rvest, dplyr, ggplot2, igraph, ggraph, grid, reshape2, RSQLite, networkD3
 License: GPL-2
