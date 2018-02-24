@@ -1,7 +1,7 @@
 Package: rdevteam
 Type: Package
 Title: R dev korea team package
-Version: 0.2.1
+Version: 0.2.2
 Author: Eunkwang, GiSeop Lee, Kwon4509, YoungJun Na, all_thinks, HyoJin Song
 Maintainer: HyoJin Song <lt.lovetoken@gmail.net>
 Description: R dev korea team package. We have gathered useful functions to solve analysis assignment and create analysis application.

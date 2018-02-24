@@ -71,7 +71,6 @@ plot(ex2)
 naverRank()
 ```
 
-
 <br><br>
 
 ## License
