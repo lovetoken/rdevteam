@@ -1,7 +1,7 @@
 #' Save and Load relation search words to sqlite
 #'
 #' Save and Load relation search words to sqlite
-#' @param x return to \code{naverRelation2()} object
+#' @param x return to \code{naverRelation()} object
 #' @param path save fileDB path
 #' @export
 #' @examples
@@ -11,7 +11,7 @@
 
 saveHistory <- function(x, path = "nvrHistory.sqlite"){
 
-  stopifnot(require(RSQLite))
+  stopifnot(require(RSQLite), require(dplyr))
 
   time <- Sys.time() %>%
     format(format = "%Y%m%d%H%M%S") %>%
@@ -33,14 +33,14 @@ saveHistory <- function(x, path = "nvrHistory.sqlite"){
 
 loadHistory <- function(){
 
-  stopifnot(require(RSQLite))
+  stopifnot(require(RSQLite), require(dplyr))
 
   con <- dbConnect(SQLite(), "nvrHistory.sqlite")
   res <- dbGetQuery(con, "select * from nvrHistory") %>% tbl_df
   dbDisconnect(con)
 
   class(res) <- class(res) %>% append("nr", after = 0)
-  attr(res, "depth") <- max(res$depth)
+  attr(res, "depth") <- grep("R[^0]", colnames(res)) %>% length
   return(res)
 
 }
