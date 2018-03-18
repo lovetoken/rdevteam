@@ -1,36 +1,36 @@
 ---
-title: Naver Relation Dashboard
-runtime : shiny
-output: 
+title: Naver relation dashboard
+runtime: shiny
+output:
   flexdashboard::flex_dashboard:
-    orientation: rows
+    orientation: columns
     theme: yeti
 ---
 
-```{r global, include = F}
+```{r global_packages}
 library(rdevteam)
-pacman::p_load("flexdashboard", "shiny", "ggplot2", "plotly", "knitr", "DT", "networkD3")
-theme_set(theme_minimal(base_family = "AppleGothic"))
+library(shiny)
+library(flexdashboard)
+library(dplyr)
+library(DT)
+library(networkD3)
 ```
 
 Sidebar {.sidebar}
-=====================================
+========================
 
-```{r}
-textInput("ui1", "Keyword", "사과")
+```{r sidebar_ui}
+textInput("ui1", "Keyword", "banana")
 actionButton("act", "Change apply")
 
 d <- reactive({
   keyword <- input$ui1
-  naverRelation(keyword, 2)
+  naverRelation(keyword, depth = 2)
 })
 ```
 
 Summary
-=====================================
-
-Column
--------------------------------------
+========================
 
 ### Plot
 
@@ -49,13 +49,13 @@ renderForceNetwork({
 renderDT({
   req(input$act)
   isolate({
-    d() %>% datatable()
+    d() %>% datatable
   })
 })
 ```
 
 About
-=====================================
+========================
 
-본 Dashboard 는 네이버 연관검색어 서비스를 기반으로 합니다.  
-사용된 도구는 [R](https://www.r-project.org/), [shiny](https://shiny.rstudio.com/), [flexdashboard](https://www.google.co.kr/search?q=flexdashboard&gws_rd=cr&ei=U2SlWKnQGIrR0ASH-rzACQ)을 이용합니다.
+본 대쉬보드는 네이버 연관검색어 서비스를 기반으로 합니다.  
+사용된 도구는 R, Shiny package, flexdashboard package 등이 이용됩니다.  
