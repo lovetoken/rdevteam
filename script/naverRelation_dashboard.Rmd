@@ -1,0 +1,61 @@
+---
+title: Naver relation dashboard
+runtime: shiny
+output:
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    theme: yeti
+---
+
+```{r global_packages}
+library(rdevteam)
+library(shiny)
+library(flexdashboard)
+library(dplyr)
+library(DT)
+library(networkD3)
+```
+
+Sidebar {.sidebar}
+========================
+
+```{r sidebar_ui}
+textInput("ui1", "Keyword", "banana")
+actionButton("act", "Change apply")
+
+d <- reactive({
+  keyword <- input$ui1
+  naverRelation(keyword, depth = 2)
+})
+```
+
+Summary
+========================
+
+### Plot
+
+```{r}
+renderForceNetwork({
+  req(input$act)
+  isolate({
+    d() %>% plot
+  })
+})
+```
+
+### Rawdata
+
+```{r}
+renderDT({
+  req(input$act)
+  isolate({
+    d() %>% datatable
+  })
+})
+```
+
+About
+========================
+
+본 대쉬보드는 네이버 연관검색어 서비스를 기반으로 합니다.  
+사용된 도구는 R, Shiny package, flexdashboard package 등이 이용됩니다.  

@@ -5,12 +5,14 @@
 \alias{loadHistory}
 \title{Save and Load relation search words to sqlite}
 \usage{
-saveHistory(x)
+saveHistory(x, path = "nvrHistory.sqlite")
 
 loadHistory()
 }
 \arguments{
-\item{x}{return to \code{naverRelation2()} object}
+\item{x}{return to \code{naverRelation()} object}
+
+\item{path}{save fileDB path}
 }
 \description{
 Save and Load relation search words to sqlite
