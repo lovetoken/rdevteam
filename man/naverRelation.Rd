@@ -22,4 +22,5 @@ First & Second relation search words return on Naver.
 }
 \examples{
 naverRelation("banana", depth = 2)
+naverRelation("훈민정음", depth = 2)
 }

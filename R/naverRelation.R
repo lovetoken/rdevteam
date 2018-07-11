@@ -8,6 +8,7 @@
 #' @export
 #' @examples
 #' naverRelation("banana", depth = 2)
+#' naverRelation("훈민정음", depth = 2)
 
 naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="){
 
@@ -15,7 +16,9 @@ naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.
   stopifnot(is.character(keyword), depth %in% 1:2,
             require(rvest), require(stringr), require(lava), require(dplyr), require(reshape2))
 
-  R1 <- paste0(searchURL, keyword) %>%
+  unicode_keyword <- paste0("%", charToRaw(keyword), collapse="")
+
+  R1 <- paste0(searchURL, unicode_keyword) %>%
     read_html %>%
     html_nodes(css = ".lst_relate") %>%
     html_text %>%
@@ -32,7 +35,8 @@ naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.
     depth2 <- list()
 
     for(i in R1){
-      depth2[[i]] <- paste0(searchURL, i) %>%
+      unicode_keyword <- paste0("%", charToRaw(i), collapse="")
+      depth2[[i]] <- paste0(searchURL, unicode_keyword) %>%
         read_html %>%
         html_nodes(css = ".lst_relate") %>%
         html_text %>%
