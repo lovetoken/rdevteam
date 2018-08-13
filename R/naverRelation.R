@@ -28,7 +28,7 @@ naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.
     depth2 <- list()
 
     for(i in R1){
-      unicode_keyword <- paste0("%", charToRaw(i), collapse="")
+      unicode_keyword <- paste0("%", charToRaw(i), collapse = "")
       depth2[[i]] <- paste0(searchURL, unicode_keyword) %>%
         xml2::read_html() %>%
         rvest::html_nodes(css = ".lst_relate") %>%

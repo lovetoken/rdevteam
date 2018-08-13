@@ -20,20 +20,12 @@ plot.nr <- function(x){
 
     pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, "Keyword", "1st Relation")
 
-    return(
-      networkD3::forceNetwork(Links = pre$links, Nodes = pre$nodes,
-                              colourScale = JS("d3.scaleOrdinal(d3.schemeCategory10);"),
-                              Source = "source", Target = "target",
-                              Value = "value", NodeID = "name",
-                              Group = "group", opacity = 0.9, zoom = T,
-                              fontSize = 20, fontFamily = "serif", legend = T,
-                              opacityNoHover = 0.1)
-    )
-
   } else if(attributes(x)$depth == 2){
 
-    x1 <- x[,1:2]; colnames(x1) <- c("R1", "R2")
-    x2 <- x[,2:3]; colnames(x2) <- c("R1", "R2")
+    x1 <- x[,1:2]
+    colnames(x1) <- c("R1", "R2")
+    x2 <- x[,2:3]
+    colnames(x2) <- c("R1", "R2")
     new_x <- rbind(x1, x2)
 
     pre <- new_x %>%
@@ -44,15 +36,14 @@ plot.nr <- function(x){
     pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, "Keyword",
                               ifelse(pre$nodes$name %in% x$R1, "1st Relation", "2nd Relation"))
 
-    return(
-      networkD3::forceNetwork(Links = pre$links, Nodes = pre$nodes,
-                              colourScale = JS("d3.scaleOrdinal(d3.schemeCategory10);"),
-                              Source = "source", Target = "target",
-                              Value = "value", NodeID = "name",
-                              Group = "group", opacity = 0.9, zoom = T,
-                              fontSize = 20, fontFamily = "serif", legend = T,
-                              opacityNoHover = 0.1)
-    )
-
   }
+  return(
+    networkD3::forceNetwork(Links = pre$links, Nodes = pre$nodes,
+                            colourScale = JS("d3.scaleOrdinal(d3.schemeCategory10);"),
+                            Source = "source", Target = "target",
+                            Value = "value", NodeID = "name",
+                            Group = "group", opacity = 0.9, zoom = T,
+                            fontSize = 20, fontFamily = "serif", legend = T,
+                            opacityNoHover = 0.1)
+  )
 }
