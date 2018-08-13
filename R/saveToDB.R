@@ -10,37 +10,28 @@
 #' loadHistory()
 
 saveHistory <- function(x, path = "nvrHistory.sqlite"){
-
-  stopifnot(require(RSQLite), require(dplyr))
-
-  time <- Sys.time() %>%
-    format(format = "%Y%m%d%H%M%S") %>%
-    as.character
+  time <- format(Sys.time(), format = "%Y%m%d%H%M%S") %>%
+    as.character()
   result <- x %>%
-    mutate(regDate = time, depth = as.integer(attributes(.)$depth)) %>%
-    select(regDate, everything())
+    dplyr::mutate(regDate = time, depth = as.integer(attributes(.)$depth)) %>%
+    dplyr::select(regDate, tidyselect::everything())
 
-  con <- dbConnect(SQLite(), path)
-  dbWriteTable(con, "nvrHistory", result, append = T)
-  dbDisconnect(con)
-
+  con <- DBI::dbConnect(RSQLite::SQLite(), path)
+  DBI::dbWriteTable(con, "nvrHistory", result, append = T)
+  DBI::dbDisconnect(con)
   message("Success save into DB")
-
 }
 
 #' @export
 #' @rdname saveHistory
 
 loadHistory <- function(){
+  con <- DBI::dbConnect(RSQLite::SQLite(), "nvrHistory.sqlite")
+  res <- DBI::dbGetQuery(con, "select * from nvrHistory")
+  DBI::dbDisconnect(con)
 
-  stopifnot(require(RSQLite), require(dplyr))
-
-  con <- dbConnect(SQLite(), "nvrHistory.sqlite")
-  res <- dbGetQuery(con, "select * from nvrHistory") %>% tbl_df
-  dbDisconnect(con)
-
-  class(res) <- class(res) %>% append("nr", after = 0)
-  attr(res, "depth") <- grep("R[^0]", colnames(res)) %>% length
-  return(res)
-
+  class(res) <- class(res) %>%
+    append("nr", after = 0)
+  attr(res, "depth") <- grep("R[^0]", colnames(res)) %>% length()
+  return(dplyr::tbl_df(res))
 }

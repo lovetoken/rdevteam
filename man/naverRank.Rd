@@ -4,7 +4,8 @@
 \alias{naverRank}
 \title{Real-time search words ranking return on Naver.}
 \usage{
-naverRank(searchURL = "https://datalab.naver.com/keyword/realtimeList.naver")
+
+  naverRank(searchURL = "https://datalab.naver.com/keyword/realtimeList.naver")
 }
 \arguments{
 \item{searchURL}{Naver Real-time search ranking query.}

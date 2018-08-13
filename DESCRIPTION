@@ -6,9 +6,9 @@ Author: Eunkwang, GiSeop Lee, Kwon4509, YoungJun Na, all_thinks, HyoJin Song
 Maintainer: HyoJin Song <lt.lovetoken@gmail.net>
 Description: R dev korea team package. We have gathered useful functions to solve analysis assignment and create analysis application.
 Depends: R (>= 3.4)
-Imports: lava, stringr, rvest, dplyr, ggplot2, igraph, ggraph, grid, reshape2, RSQLite, networkD3
+Imports: stringr, rvest, dplyr, igraph, reshape2, RSQLite, networkD3, DBI, tibble, tidyselect, xml2, magrittr
 License: GPL-2
 URL: https://lovetoken.gitbooks.io/r-dev-team-open-seminar/content/, https://github.com/lovetoken/rdevteam
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0

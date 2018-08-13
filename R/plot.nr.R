@@ -11,15 +11,12 @@
 #' plot(nr2)
 
 plot.nr <- function(x){
-
-  stopifnot(require(igraph), require(networkD3), require(dplyr))
-
   if(attributes(x)$depth == 1){
 
     pre <- x %>%
-      count(R1, R0) %>%
-      graph_from_data_frame %>%
-      igraph_to_networkD3
+      dplyr::count(R1, R0) %>%
+      igraph::graph_from_data_frame() %>%
+      networkD3::igraph_to_networkD3()
 
     pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, "Keyword", "1st Relation")
 
@@ -40,9 +37,9 @@ plot.nr <- function(x){
     new_x <- rbind(x1, x2)
 
     pre <- new_x %>%
-      count(R2, R1) %>%
-      graph_from_data_frame %>%
-      igraph_to_networkD3
+      dplyr::count(R2, R1) %>%
+      igraph::graph_from_data_frame() %>%
+      networkD3::igraph_to_networkD3()
 
     pre$nodes$group <- ifelse(pre$nodes$name %in% x$R0, "Keyword",
                               ifelse(pre$nodes$name %in% x$R1, "1st Relation", "2nd Relation"))
@@ -58,5 +55,4 @@ plot.nr <- function(x){
     )
 
   }
-
 }
