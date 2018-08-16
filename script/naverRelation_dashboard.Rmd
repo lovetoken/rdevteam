@@ -38,7 +38,9 @@ Summary
 renderForceNetwork({
   req(input$act)
   isolate({
-    d() %>% plot
+    nr <- d()
+    class(nr) <- append(class(nr), "nr", after = 0)
+    plot(nr)
   })
 })
 ```
