@@ -8,18 +8,14 @@
 #' naverRank()
 
 naverRank <- function(searchURL = "https://datalab.naver.com/keyword/realtimeList.naver"){
+  top20 <- xml2::read_html(searchURL) %>%
+    rvest::html_nodes(css = ".title") %>%
+    rvest::html_text() %>%
+    trimws("both") %>%
+    magrittr::extract(81:100)
 
-  stopifnot(require(rvest), require(lava), require(dplyr), require(reshape2), require(magrittr))
-
-  top20 <- searchURL %>%
-    read_html %>%
-    html_nodes(css = ".title") %>%
-    html_text %>%
-    trim %>%
-    extract(81:100)
-
-  res <- tibble(search_time = as.character(Sys.time()), top_keyword = top20)
-  class(res) <- class(res) %>% append("nr", after = 0)
+  res <- tibble::tibble(search_time = as.character(Sys.time()), top_keyword = top20)
+  class(res) <- class(res) %>%
+    append("nr", after = 0)
   return(res)
-
 }
