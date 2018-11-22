@@ -10,7 +10,7 @@
 #' nr2 <- naverRelation("korea", 2)
 #' plot(nr2)
 
-plot.nr <- function(x){
+plot.nr <- function(x, ...){
   if(attributes(x)$depth == 1){
 
     pre <- x %>%
@@ -39,7 +39,7 @@ plot.nr <- function(x){
   }
   return(
     networkD3::forceNetwork(Links = pre$links, Nodes = pre$nodes,
-                            colourScale = JS("d3.scaleOrdinal(d3.schemeCategory10);"),
+                            colourScale = networkD3::JS("d3.scaleOrdinal(d3.schemeCategory10);"),
                             Source = "source", Target = "target",
                             Value = "value", NodeID = "name",
                             Group = "group", opacity = 0.9, zoom = T,

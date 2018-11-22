@@ -4,7 +4,7 @@
 \alias{plot.nr}
 \title{Network plot about preprocessed naverRelation result}
 \usage{
-\method{plot}{nr}(x)
+\method{plot}{nr}(x, ...)
 }
 \arguments{
 \item{x}{return to \code{naverRelation()} object}
