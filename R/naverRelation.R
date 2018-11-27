@@ -41,12 +41,13 @@ naverRelation <- function(keyword, depth = 1, searchURL = "https://search.naver.
     res <- depth2 %>%
       reshape2::melt() %>%
       dplyr::mutate(R0 = keyword) %>%
-      dplyr::select(R0, R1 = L1, R2 = value)
+      dplyr::select(R0, R1 = L1, R2 = value) %>%
+      tbl_df
 
   }
 
   class(res) <- class(res) %>%
     append("nr", after = 0)
   attr(res, "depth") <- depth
-  return(dplyr::tbl_df(res))
+  return(res)
 }
